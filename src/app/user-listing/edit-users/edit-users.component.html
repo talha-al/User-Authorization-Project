@@ -1,0 +1,44 @@
+<div
+  fxLayoutAlign="space-between center"
+  style="
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid black;
+  "
+  (close)="close(null)"
+>
+  <div style="font-size: 20px; font-weight: 500">Edit User</div>
+  <mat-icon style="cursor: pointer" (click)="close(null)">close</mat-icon>
+</div>
+
+<div [formGroup]="userForm" fxLayout="column" style="margin-top: 30px">
+  <mat-form-field class="example-full-width" fxFlex="1 1 auto">
+    <mat-label>User Name</mat-label>
+    <mat-icon matSuffix>account_circle</mat-icon>
+    <input
+      type="text"
+      formControlName="userName"
+      matInput
+      placeholder="First Name"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Select role</mat-label>
+    <mat-select formControlName="roleValue">
+      <mat-option *ngFor="let role of roles" [value]="role.value">
+        {{ role.txt }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button
+    fxFlex="1 1 auto"
+    mat-raised-button
+    color="primary"
+    style="margin-top: 12px"
+    [disabled]="userForm.invalid"
+    (click)="save()"
+  >
+    Save
+  </button>
+</div>

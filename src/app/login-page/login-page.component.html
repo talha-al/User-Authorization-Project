@@ -1,0 +1,110 @@
+<mat-card *ngIf="!signUpControl && !currentUser?.roleValue" fxFlex="1 1 auto">
+  <mat-card-header style="border-bottom: 1px solid">
+    <mat-card-title>User Login</mat-card-title>
+  </mat-card-header>
+  <mat-card-content fxLayout="column" style="margin-top: 16px">
+    <div fxFlex="1 1 auto" fxLayoutAlign="space-between center" fxLayout="row">
+      <mat-form-field fxFlex="1 1 auto">
+        <mat-label>User Name</mat-label>
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <input
+          [formControl]="userName"
+          type="text"
+          matInput
+          placeholder="First Name"
+        />
+      </mat-form-field>
+    </div>
+
+    <div
+      fxLayoutAlign="end end"
+      style="color: blue; cursor: pointer"
+      (click)="signUp()"
+    >
+      Sign Up
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      fxFlex="1 1 auto"
+      mat-raised-button
+      color="primary"
+      (click)="userAuthentication(userName.value)"
+    >
+      Login
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card *ngIf="signUpControl && !currentUser?.roleValue" fxFlex="1 1 auto">
+  <mat-card-header style="border-bottom: 1px solid">
+    <mat-card-title>Sign Up</mat-card-title>
+  </mat-card-header>
+  <mat-card-content fxLayout="column" style="margin-top: 16px">
+    <div fxFlex="1 1 auto" fxLayoutAlign="space-between center" fxLayout="row">
+      <mat-form-field fxFlex="1 1 auto">
+        <mat-label>User Name</mat-label>
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <input
+          [formControl]="userName"
+          type="text"
+          matInput
+          placeholder="First Name"
+        />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field fxFlex="1 1 auto">
+      <mat-label>Role</mat-label>
+      <mat-icon matSuffix>work</mat-icon>
+      <input
+        value="customer"
+        type="text"
+        matInput
+        placeholder="First Name"
+        [disabled]="true"
+      />
+    </mat-form-field>
+
+    <div
+      fxLayoutAlign="end end"
+      style="color: blue; cursor: pointer"
+      (click)="signUp()"
+    >
+      Login
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      fxFlex="1 1 auto"
+      mat-raised-button
+      color="primary"
+      (click)="addNewUser(userName.value)"
+    >
+      Sign Up
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card *ngIf="currentUser?.roleValue" fxFlex="1 1 auto">
+  <mat-card-header style="border-bottom: 1px solid">
+    <mat-card-title
+      >{{ currentUser.userName }} ({{ currentUser.roleTxt }})
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content fxLayout="column" style="margin-top: 16px">
+    <div fxFlex="1 1 auto" fxLayoutAlign="space-between center" fxLayout="row">
+      You are now in the "{{ currentUser.userName }}" account
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      fxFlex="1 1 auto"
+      mat-raised-button
+      color="primary"
+      (click)="logOut()"
+    >
+      Log out
+    </button>
+  </mat-card-actions>
+</mat-card>

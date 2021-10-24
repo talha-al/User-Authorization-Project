@@ -1,0 +1,21 @@
+:host {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+
+.test {
+  height: 90vh;
+  flex-direction: column;
+  background-position: center;
+  color: #fff;
+  background: linear-gradient(0deg, rgba(54, 50, 50, 0) 0%, rgb(0, 0, 0) 150%);
+}
+.logo {
+  cursor: pointer;
+  margin: 6px;
+}
+
+.creator{
+  padding: 6px 0;
+}

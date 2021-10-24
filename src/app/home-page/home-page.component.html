@@ -1,0 +1,60 @@
+<div class="test" fxFlex="1 1 auto" fxLayout="column">
+  <div
+    fxFlex="0 0 auto"
+    fxLayoutAlign="center center"
+    fxLayout="column"
+    style="height: 90vh"
+  >
+    <div style="width: 50%; font-size: xx-large; color: antiquewhite">
+      User Authorization Project Description
+    </div>
+    <div style="margin: 16px; width: 50%">
+      This project is a basic project with user roles edited. There are 3
+      different user roles: Admin, Superadmin and customer. Every user can login
+      to the system. Only admin and super admin can edit user roles.
+    </div>
+    <img src="./assets/userİmage.jpg" width="50%" height="50%" />
+    <div
+      *ngIf="permission"
+      fxFlex="0 1 auto"
+      style="width: 50%; margin-top: 24px"
+    >
+      <button
+        fxFlex="1 1 auto"
+        mat-raised-button
+        color="primary"
+        (click)="openEditUsers()"
+      >
+        Edit Users
+      </button>
+    </div>
+  </div>
+  <div
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="12px"
+    style="background-color: black; padding-bottom: 40px"
+  >
+    <div fxLayout="column" style="padding-top: 52px; align-items: center">
+      <div class="creator">Talha Şeref ALATAŞ</div>
+      <div class="creator">28/08/1997</div>
+      <div class="creator">
+        Gazi University Electrical Electronics Engineering
+      </div>
+    </div>
+    <div fxLayout="row">
+      <img
+        class="logo"
+        width="30px"
+        src="./assets/linkedinLogo.png"
+        (click)="goToLinkedin()"
+      />
+      <img
+        class="logo"
+        width="30px"
+        src="./assets/githubLogo.png"
+        (click)="goToGithub()"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+:host {
+  flex: 1 1 auto;
+  height: 100%;
+}
+.test {
+  color: #fff;
+  flex-direction: column;
+  background: linear-gradient(0deg, rgba(54, 50, 50, 0) 0%, rgb(0, 0, 0) 150%);
+}

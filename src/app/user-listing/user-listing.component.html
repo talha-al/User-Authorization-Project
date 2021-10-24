@@ -1,0 +1,66 @@
+<div class="userList" fxFlex="1 1 auto" overflow-y-scroll>
+  <div
+    fxFlex="15%"
+    fxlayout="row"
+    fxLayoutAlign="start center"
+    style="border-bottom: 1px solid"
+  >
+    <div class="header" fxFlex="40%">User Name</div>
+    <div class="header" fxFlex="50%">Role</div>
+    <div
+      fxFlex="1 1 auto"
+      fxLayoutAlign="end end"
+      style="cursor: pointer; padding-right: 20px"
+      (click)="addUser()"
+    >
+      <button mat-mini-fab color="primary">
+        <mat-icon>person_add</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div
+    *ngFor="let user of allUsers; index as index"
+    fxFlex="0 0 auto"
+    fxLayoutAlign="start center"
+  >
+    <div
+      *ngIf="
+        currentUser.roleTxt === 'super admin' ||
+        (currentUser.roleTxt === 'admin' && user.roleTxt !== 'super admin')
+      "
+      class="tableCell"
+      fxFlex="1 1 auto"
+      fxLayoutAlign="start center"
+    >
+      <div fxFlex="40%">{{ user.userName }}</div>
+      <div fxFlex="40%">{{ user.roleTxt }}</div>
+      <div fxFlex="20%" fxLayoutAlign="end center" fxLayoutGap="12px">
+        <mat-icon
+          mat-icon-button
+          color="primary"
+          style="cursor: pointer"
+          (click)="openUserEditDialog(user, index)"
+          >edit</mat-icon
+        >
+        <mat-icon
+          mat-icon-button
+          color="warn"
+          style="cursor: pointer"
+          (click)="deleteUser(index)"
+          >delete_forever</mat-icon
+        >
+      </div>
+    </div>
+  </div>
+  <div fxLayoutAlign="end end">
+    <button
+      fxFlex="0 0 auto"
+      mat-raised-button
+      color="primary"
+      style="margin: 12px"
+      (click)="save()"
+    >
+      Save
+    </button>
+  </div>
+</div>

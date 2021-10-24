@@ -1,0 +1,33 @@
+<div
+  fxFlex="1 1 auto"
+  style="background-color: black; color: blanchedalmond; height: 100%"
+  fxLayoutAlign="start center"
+>
+  <div
+    fxFlex="20%"
+    style="padding-left: 16px; cursor: pointer"
+    fxLayout="row"
+    (click)="goToHomePage()"
+  >
+    <mat-icon>home</mat-icon>
+    <div style="align-self: center;margin-left: 10px;">User Login Project</div>
+  </div>
+  <div fxFlex="1 1 auto" fxLayoutAlign="end end" style="padding-right: 16px">
+    <div class="logo" fxLayout="row" (click)="goToLoginPage()">
+      <mat-icon>person</mat-icon>
+      <div style="align-self: center; margin-left: 8px">{{currentUserisActive ? 'Sign Out' : 'Sign in'}} </div>
+    </div>
+    <!-- <img
+        class="logo"
+        width="30px"
+        src="./assets/linkedinLogo.png"
+        (click)="goToLinkedin()"
+      />
+      <img
+        class="logo"
+        width="30px"
+        src="./assets/githubLogo.png"
+        (click)="goToGithub()"
+      /> -->
+  </div>
+</div>
