@@ -31,11 +31,4 @@ export class HomePageComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
-  goToLinkedin() {
-    window.location.href = 'https://www.linkedin.com/in/talhaalatas/';
-  }
-
-  goToGithub() {
-    window.location.href = 'https://github.com/talha-al/User-Authorization-Project';
-  }
 }

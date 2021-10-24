@@ -1,0 +1,28 @@
+<div
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="12px"
+    style="background-color: black; padding-bottom: 40px"
+  >
+    <div fxLayout="column" style="padding-top: 52px; align-items: center">
+      <div class="creator">Talha Şeref ALATAŞ</div>
+      <div class="creator">28/08/1997</div>
+      <div class="creator">
+        Gazi University Electrical Electronics Engineering
+      </div>
+    </div>
+    <div fxLayout="row">
+      <img
+        class="logo"
+        width="30px"
+        src="./assets/linkedinLogo.png"
+        (click)="goToLinkedin()"
+      />
+      <img
+        class="logo"
+        width="30px"
+        src="./assets/githubLogo.png"
+        (click)="goToGithub()"
+      />
+    </div>
+  </div>

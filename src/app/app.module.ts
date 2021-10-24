@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditUsersComponent } from './user-listing/edit-users/edit-users.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     UserListingComponent,
     EditUsersComponent,
     NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
