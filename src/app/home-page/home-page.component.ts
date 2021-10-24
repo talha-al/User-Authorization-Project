@@ -36,6 +36,6 @@ export class HomePageComponent implements OnInit {
   }
 
   goToGithub() {
-    window.location.href = 'https://github.com/talha-al?tab=repositories';
+    window.location.href = 'https://github.com/talha-al/User-Authorization-Project';
   }
 }
